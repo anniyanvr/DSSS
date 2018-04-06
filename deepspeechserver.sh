@@ -61,6 +61,7 @@ case $1 in
   status)
     if check-server ; then
       echo "Did not detect an instance of deepspeech-server running."
+      exit 89
     else
       echo "deepspeech-server appears to be running."
     fi
