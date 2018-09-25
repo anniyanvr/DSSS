@@ -1,15 +1,21 @@
 {
-	"deepspeech": {
-		"model" :"/opt/deepspeech/models/output_graph.pb",
-		"alphabet": "/opt/deepspeech/models/alphabet.txt",
-		"lm": "/opt/deepspeech/models/lm.binary",
-		"trie": "/opt/deepspeech/models/trie"
-	},
-	"server": {
-		"http": {
-		"host": "0.0.0.0",
-		"port": 4880,
-		"request_max_size": 1048576
-		}
-	}
+        "deepspeech": {
+                "model" :"/opt/DS2/models/output_graph.pb",
+                "alphabet": "/opt/DS2/models/alphabet.txt",
+                "lm": "/opt/DS2/models/lm.binary",
+                "trie": "/opt/DS2/models/trie"
+        },
+        "server": {
+                "http": {
+                "host": "0.0.0.0",
+                "port": 1880,
+                "request_max_size": 1048576
+                }
+        },
+          "log": {
+                      "level": [
+                                    { "logger": "deepspeech_server", "level": "DEBUG"}
+                               ]
+                  }
 }
+
