@@ -5,7 +5,7 @@ DEEP_HOME=/opt/deepspeech
 DSS=/usr/local/bin/deepspeech-server
 CONFIG="${DEEP_HOME}/config.json"
 DSC="${DSS} --config ${CONFIG}"
-RUN_CMD="screen -mdS Deepspeech-Server ${DSS}" 
+RUN_CMD="screen -mdS Deepspeech-Server ${DSC}" 
 
 check-server() {
 if pgrep -f deepspeech-server > /dev/null ; then
@@ -21,7 +21,7 @@ if ! check-server ; then
 fi
 echo "Starting server..." 
 
-screen -mdS Deepspeech-Server ${DSC}
+$RUN_CMD
 if [[ $? -eq 0 ]] ; then
   echo "Started!"
 else
